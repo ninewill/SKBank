@@ -1,0 +1,45 @@
+.banner {
+  width: 100%;
+  padding-top: 142%;
+  position: relative;
+  background-image: url('../../img/bg/SKbank_KV-MO.png');
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+
+  @include min-width(map-get($tablet, md)) {
+    padding-top: 48.59%;
+    background-image: url('../../img/bg/SKbank_KV-PC.png');
+  }
+}
+
+.description {
+  max-width: calc(100% - 40px);
+  display: block;
+  position: relative;
+  z-index: 10;
+  margin: 0 auto;
+  font-size: map-get($font-size, 7);
+  margin-bottom: 5rem;
+  letter-spacing: 2px;
+  line-height: 1.5;
+  top: 50px;
+
+  @include min-width(map-get($tablet, sm)) {
+    top: auto;
+    font-size: map-get($font-size, 5);
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    padding: 0 5rem;
+  }
+
+  @include min-width(map-get($tablet, lg)) {
+    width: 500px;
+    display: block;
+    position: absolute;
+    left: 100px;
+    margin-top: -16%;
+    padding: 0;
+    color: $color-purple;
+  }
+}

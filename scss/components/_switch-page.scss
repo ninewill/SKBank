@@ -1,0 +1,159 @@
+.switch-wrap {
+  margin-top: 7rem;
+  background-color: $color-white;
+  position: relative;
+
+  @include min-width(map-get($phone, lg)) {
+    margin-top: 5rem;
+  }
+
+  @include min-width(map-get($tablet, md)) {
+    margin-top: 3rem;
+  }
+
+  &::after {
+    content: '';
+    width: 300px;
+    height: 100px;
+    position: absolute;
+    top: -100px;
+    right: 0px;
+    display: block;
+    background: url('../../img/bg/SKbank_image-02.svg') no-repeat center/cover;
+
+    @include min-width(map-get($phone, lg)) {
+      width: 400px;
+      height: 150px;
+      right: 0px;
+      top: -145px;
+    }
+
+    @include min-width(map-get($tablet, md)) {
+      right: 50px;
+    }
+
+    @include min-width(map-get($desktop, md)) {
+      right: 200px;
+    }
+  }
+}
+
+.switch-menu {
+  display: flex;
+  // border-bottom: 2px dashed $color-purple;
+
+  > a {
+    width: 100%;
+    height: 100%;
+    padding: 1rem 0;
+    display: block;
+    cursor: pointer;
+    font-size: map-get($font-size, 6);
+    color: $color-red-light;
+    background-color: $color-purple;
+
+    @include min-width(map-get($phone, lg)) {
+      font-size: map-get($font-size, 4);
+    }
+
+    @include min-width(map-get($tablet, md)) {
+      font-size: map-get($font-size, 3);
+    }
+  }
+
+  .active {
+    color: $color-purple;
+    background-color: $color-white;
+    border: 2px dashed $color-purple;
+  }
+}
+
+.page {
+  width: 100%;
+  padding-top: 2rem;
+  border: 2px dashed $color-purple;
+  border-top: none;
+
+  .page1,
+  .page2 {
+    width: 100%;
+    height: 100%;
+  }
+
+  .page1 {
+    .mid {
+      position: relative;
+    }
+  }
+  .page2 {
+    .mid {
+      position: relative;
+    }
+  }
+  .page-description {
+    letter-spacing: 2px;
+    line-height: 2;
+    padding: 0 2rem;
+    margin-bottom: 2rem;
+    font-size: map-get($font-size, 7);
+
+    @include min-width(map-get($phone, lg)) {
+      padding: 0;
+      font-size: map-get($font-size, 6);
+    }
+
+    @include min-width(map-get($tablet, md)) {
+      font-size: map-get($font-size, 5);
+    }
+  }
+
+  .info {
+    overflow: hidden;
+    > img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .info-pc-bg {
+    display: none;
+
+    @include min-width(map-get($tablet, md)) {
+      display: block;
+    }
+  }
+
+  .info-mobile-bg {
+    display: block;
+
+    @include min-width(map-get($tablet, md)) {
+      display: none;
+    }
+  }
+
+  .info-btn {
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    bottom: -25px;
+    margin-left: -79px;
+    padding: 0.5rem 2rem;
+    border-radius: 50px;
+    background-color: $color-red;
+
+    > span {
+      display: flex;
+      align-items: center;
+      color: $color-white;
+
+      &::after {
+        content: '';
+        width: 30px;
+        height: 30px;
+        display: block;
+        background: url('../../img/icon/SKbank_icon_06.svg') no-repeat
+          center/cover;
+      }
+    }
+  }
+}

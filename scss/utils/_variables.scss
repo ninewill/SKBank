@@ -1,0 +1,113 @@
+@charset "UTF-8";
+
+// * ==========================================================================
+// * 顏色
+// * ==========================================================================
+
+$color-white: #ffffff;
+$color-gray: #c4c4c4;
+$color-black-light: #0000003b;
+$color-black: #000;
+
+$color-green-light: #f5fbff;
+$color-green-light-d: #35cba2;
+$color-green: #32c8a4;
+$color-green-dark: #189a7b;
+
+$color-light-green: #94c962;
+$color-light-green-light: #7aaf48;
+$color-green-dark-light: #73b150;
+
+$color-blue: #50aaf8;
+$color-blue-light: #b6dff6;
+$color-blue-dark-light: #45aeef;
+$color-blue-dark: #4c9dea;
+$color-blue-Indigo: #6285ef;
+
+$color-red-light: #ffc0b7;
+$color-red-light-d: #f14e98;
+$color-red: #e52439;
+$color-red-dark-light: #eb545c;
+$color-red-dark: #e23551;
+
+$color-orange-light: #fbd4b1;
+$color-orange: #f19e5e;
+$color-orange-dark-light: #e89033;
+$color-orange-dark: #d46f22;
+
+$color-yellow-light: #e8ec6a;
+$color-yellow: #f7f193;
+
+$color-purple: #8a70eb;
+
+$color-gray: #e6e9ee;
+$color-gray-light: #efefef;
+$color-gray-light-d: #ccd0d9;
+$color-gray-dark: #656d78;
+$color-gray-dark-d: #707070;
+$color-gray-dark-d-d: #484848;
+
+// * ==========================================================================
+// * RWD 斷點設定
+// * ==========================================================================
+
+// 電腦版
+$desktop: (
+  xl: 1600px,
+  lg: 1440px,
+  md: 1280px,
+  sm: 1025px,
+);
+
+// 平版
+$tablet: (
+  lg: 1024px,
+  md: 960px,
+  sm: 768px,
+);
+
+// 手機版
+$phone: (
+  lg: 767px,
+  md: 480px + 1px,
+  sm: 400px + 1px,
+  xs: 370px + 1px,
+  xxs: 320px + 1px,
+);
+
+// * ==========================================================================
+// * 字體大小
+// * ==========================================================================
+
+$font-size: (
+  1: 5rem,
+  2: 2.25rem,
+  3: 1.75rem,
+  4: 1.5rem,
+  5: 1.25rem,
+  6: 1.125rem,
+  7: 1rem,
+  8: 0.9rem,
+  // * 其他-----------------
+    1-2: 4rem,
+  1-1: 3rem,
+);
+
+// * ==========================================================================
+// * 字體
+// * ==========================================================================
+
+$font-family: 'Noto Sans TC', '微軟正黑體', 'Microsoft JhengHei', sans-serif,
+  Arial;
+
+// * ==========================================================================
+// * Focus 時的外框樣式
+// * ==========================================================================
+
+@function focusBorder($inside: false, $opacity: 0.6) {
+  @if $inside==true {
+    @return inset 0 0 0 0.2rem rgba($color-black, $opacity);
+  } @else {
+    @return 0 0 0 0.13rem rgba($color-black, $opacity);
+  }
+}

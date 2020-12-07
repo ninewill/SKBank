@@ -1,0 +1,61 @@
+@charset "UTF-8";
+@import "./_variables.scss";
+
+// * RWD Max Breakpoints
+@mixin max-width($breakpoints) {
+  @media screen and (max-width: $breakpoints) {
+    @content;
+  }
+}
+
+// * RWD Min Breakpoints
+@mixin min-width($breakpoints) {
+  @media screen and (min-width: $breakpoints) {
+    @content;
+  }
+}
+
+// * RWD Max Height Breakpoints
+@mixin max-height($breakpoints) {
+  @media screen and (max-height: $breakpoints) {
+    @content;
+  }
+}
+
+// * RWD Min Height Breakpoints
+@mixin min-height($breakpoints) {
+  @media screen and (min-height: $breakpoints) {
+    @content;
+  }
+}
+
+// * 處理 IE10 和 IE11 的 CSS Hack
+@mixin hack-ie {
+
+  @media screen and (-ms-high-contrast: active),
+  (-ms-high-contrast: none) {
+    @content;
+  }
+}
+
+// * 隱藏文字
+@mixin hidetext {
+  font-size: 0rem;
+  text-indent: -9999px;
+  overflow: hidden;
+}
+
+// * Font Awesome
+@mixin fontawesome {
+  font-weight: 900;
+  font-family: 'Font Awesome 5 Free';
+}
+
+// * 文字溢出省略
+
+@mixin textellipsis {
+  overflow: hidden;
+  word-break: keep-all;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

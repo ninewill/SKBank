@@ -1,0 +1,16 @@
+@charset "UTF-8";
+@import './utils/_utils.scss';
+
+@font-face {
+  font-family: myfont;
+  font-style: normal;
+  font-weight: normal;
+  src: url('../../fonts/GenYoGothicTW-M-01.ttf') format('truetype');
+}
+
+@import './_header.scss';
+@import './_index.scss';
+@import './_footer.scss';
+@import './components/_menu.scss';
+@import './components/_banner.scss';
+@import './components/_switch-page.scss';

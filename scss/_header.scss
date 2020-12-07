@@ -1,0 +1,196 @@
+.header {
+  background: $color-red;
+
+  &.is-menu-open {
+    border-bottom: 1px solid $color-white;
+  }
+}
+
+.wrap {
+  max-width: calc(100% - 50px);
+  margin: 0 auto;
+
+  @include min-width(map-get($desktop, lg)) {
+    max-width: calc(100% - 100px);
+  }
+
+  @include min-width(map-get($desktop, xl)) {
+    // max-width: 1440px;
+  }
+}
+
+.header__content {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 200px;
+  height: 70px;
+  display: block;
+  position: relative;
+
+  > a {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-image: url('../../img/logo.svg');
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    @include hidetext;
+  }
+
+  @include min-width(map-get($phone, lg)) {
+    width: 200px;
+    height: 70px;
+  }
+}
+
+.header__menu {
+  display: flex;
+
+  > ul {
+    display: none;
+    align-items: center;
+
+    @include min-width(map-get($tablet, md)) {
+      display: flex;
+    }
+
+    > li {
+      margin: 0 1rem;
+    }
+  }
+}
+
+.header__link {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  text-align: center;
+  color: $color-gray-dark;
+  transition: 0.1s;
+
+  @include min-width(map-get($desktop, sm)) {
+    &:hover {
+      color: $color-red;
+    }
+  }
+}
+
+.header__list {
+  display: block;
+  font-size: map-get($font-size, 4);
+  color: $color-white;
+}
+
+.icon-line {
+  background: url('../../img/icon/line-icon.svg') no-repeat center/contain;
+}
+
+.icon-facebook {
+  background: url('../../img/icon/fb-icon.svg') no-repeat center/contain;
+}
+
+// Menu button
+.menu-btn {
+  width: 30px;
+  height: 35px;
+  display: block;
+  position: relative;
+  z-index: 3000;
+
+  @include min-width(map-get($tablet, sm)) {
+    display: none;
+  }
+}
+
+// 電腦版選單
+
+// Mobile Menu Button
+.mobile-menu-btn {
+  width: 40px;
+  height: 55px;
+  position: relative;
+  display: block;
+  z-index: 3000;
+
+  @include min-width(map-get($tablet, md)) {
+    display: none;
+  }
+}
+
+//手機版選單
+.m-line {
+  width: 40px;
+  height: 2px;
+  display: block;
+  position: relative;
+  margin: -0.8rem auto 0 auto;
+  background-color: $color-white;
+  transition: all 0.2s ease;
+
+  &:before,
+  &:after {
+    display: block;
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 2px;
+    background-color: $color-white;
+    transition: all 0.2s ease;
+    top: 10px;
+  }
+
+  &:after {
+    width: 40px;
+    top: 20px;
+  }
+
+  @include min-width(map-get($phone, md)) {
+    width: 40px;
+
+    &:before {
+      width: 40px;
+    }
+
+    &:after {
+      width: 40px;
+    }
+  }
+}
+
+// Mobile Menu close
+
+.is-active {
+  .m-line {
+    width: 40px;
+    transform: rotate(45deg);
+    top: 8px;
+    background-color: $color-white;
+
+    &::before {
+      transform: scale(0);
+    }
+
+    &::after {
+      transform: rotate(-90deg);
+      top: 0px;
+      background-color: $color-white;
+    }
+
+    @include min-width(map-get($phone, md)) {
+      width: 40px;
+    }
+  }
+}
+
+.is-open {
+  border-bottom: 1px solid $color-white;
+}
